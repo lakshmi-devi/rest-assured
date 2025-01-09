@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ProductionOrderCreation">
+
+	<!-- Instance define -->
+	<parameter name="instance" value="plugin-dev"></parameter>
+
+	<!-- Login Parameters -->
+
+	<parameter name="user" value="Tarun Kumar" />
+	<!-- <parameter name="user" value= "John Newquist" /> -->
+	<!-- <parameter name="user" value= "catherine" /> -->
+	<!-- <parameter name="user" value= "louis" /> -->
+	<!-- <parameter name="user" value= "michelle" /> -->
+	<!-- <parameter name="user" value= "jennifer" /> -->
+	<!-- <parameter name="user" value= "vincent" /> -->
+	<!-- <parameter name="user" value= "patrick" /> -->
+	<!-- <parameter name="user" value= "douglas" /> -->
+	<!-- <parameter name="user" value= "lakshmi" /> -->
+
+	<listeners>
+		<listener class-name="tests.e2e.apiInterface.ManufactonListener"></listener>
+	</listeners>
+
+	<test thread-count="5" name="Basic for - Creating Planning order">
+		<parameter name="scriptType" value="dashboard"></parameter>
+		<classes>
+			<!-- init API's-->
+			<class name="tests.e2e.integration.initiApis.LoginInit" />
+			<class name="tests.e2e.integration.initiApis.GetProject" />
+			<class name="tests.e2e.integration.initiApis.GetUsers" />
+			<class name="tests.e2e.integration.initiApis.GetCompany" />
+			<class name="tests.e2e.integration.initiApis.GetCompanyProjectAllLinkedUsers" />
+			<class name="tests.e2e.integration.initiApis.GetCompanyRunsNew" />
+			<class name="tests.e2e.integration.initiApis.GetLocationsForUser" />
+			<class name="tests.e2e.integration.initiApis.GetCompanyVendors" />
+			<class name="tests.e2e.integration.initiApis.GetAssemblyCatalogue" />
+			<class name="tests.e2e.integration.initiApis.GetPartsCatalogue" />
+			<class name="tests.e2e.integration.initiApis.GetCategories" />
+			<class name="tests.e2e.integration.initiApis.GetAllLocationsForUser" />
+			<class name="tests.e2e.integration.initiApis.GetPermissionGroups" />
+			<class name="tests.e2e.integration.initiApis.GetTemplateForms" />
+
+			<!-- Company Level API's-->
+			<class name="tests.e2e.integration.companyLevelApis.MemberAdd" />
+
+			<!-- Baseorder Level API's-->
+			<class name="tests.e2e.integration.baseOrderApis.ProjectPlanner" />
+			<class name="tests.e2e.integration.baseOrderApis.Coordination" />
+			<class name="tests.e2e.integration.baseOrderApis.Detailing" />
+			<class name="tests.e2e.integration.baseOrderApis.Manufacturing" />
+			<class name="tests.e2e.integration.baseOrderApis.ShippingOrderCreateFromPO" />
+
+			<class name="tests.e2e.integration.baseOrderApis.moveOrders" />
+		
+
+			<class name="tests.e2e.integration.baseOrderApis.Requesting" />
+			<class name="tests.e2e.integration.baseOrderApis.Sourcing" />
+			<class name="tests.e2e.integration.baseOrderApis.Ordering" />
+
+			<class name="tests.e2e.integration.baseOrderApis.ProductionTemplate" />
+			<class name="tests.e2e.integration.baseOrderApis.SupplyChainApis" />
+
+			<!-- Project Creation-->
+			<class name="tests.e2e.integration.projectApis.ProjectCreation" />
+
+
+			<!-- Ryvit Api's-->
+			<class name="tests.e2e.integration.ryvitApis.RyvitCreateProject" />
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

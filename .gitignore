@@ -1,0 +1,7 @@
+/target/
+/bin/
+/test-output/
+/.metadata/
+/.settings/
+/.classpath/
+ApiLog.txt
